@@ -11,7 +11,7 @@ function RandomGenerateNumbers(){
 };
 
 RandomGenerateNumbers();
-setTimeout(VerificationNumber, 1000)
+setTimeout(VerificationNumber, 30000)
 
 // console.log(NumberGenerate)
 // console.log(NumberGenerate.length)
