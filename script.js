@@ -1,7 +1,7 @@
 const NumeberTogenerate = 5;
+let NumberGenerate=[];
 let Row = document.querySelector('.riga');
 function RandomGenerateNumbers(){
-    let NumberGenerate=[];
     for(i=0;i<NumeberTogenerate;i++){
         let GenerateNumber = Math.floor(Math.random() * 100);
         NumberGenerate.push(GenerateNumber);
@@ -13,16 +13,30 @@ function RandomGenerateNumbers(){
 RandomGenerateNumbers();
 setTimeout(VerificationNumber, 1000)
 
+// console.log(NumberGenerate)
+// console.log(NumberGenerate.length)
+
+let Verifica;
+let NumRight=[];
+let Num = 0;
 function VerificationNumber(){
 Row.style.display= "none";
-const NewRow = document.createElement("p");
-let NumRight =[];
-for(i=0;i<NumeberTogenerate;i++){
-    let Verifica = prompt('inserisci il numero');
-    if(Verifica.includes(NumberGenerate)){
-        NumRight.push(Verifica);
+let NewRow = document.getElementById("correctnumber");
+let NumUtent =[];
+for(i=0;i<NumberGenerate.length;i++){
+  Verifica = parseInt(prompt('inserisci il numero'));
+  console.log(Verifica)
+    NumUtent.push(Verifica)
+  if(NumberGenerate.includes(Verifica)){
+        console.log('ciao')
+        NumRight.push(Verifica)
+        Num++;
+    }else {
+        console.log('miao')
     }
+    console.log(NumUtent)
 }
-NewRow.innerHTML = "i numeri indovinati sono" + NumRight;
-console.log(Verifica)
+console.log(NumRight)
+NewRow.innerHTML = "i numeri indovinati sono "+ Num + " e sono: " + NumRight;
+
 }
